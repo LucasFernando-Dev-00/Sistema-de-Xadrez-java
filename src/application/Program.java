@@ -8,7 +8,7 @@ public class Program {
         Board board = new Board (8,8);
 
         ChessMatch chessMatch = new ChessMatch();
-        UI.printBoard(ChessMatch.getPices());
+        UI.printBoard(chessMatch.getPieces());
 
 
     }
