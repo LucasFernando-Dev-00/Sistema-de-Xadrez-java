@@ -50,10 +50,12 @@ public class Board {
             throw new BoardException("Position not on the board");
         }
 
-        if (position == null) {
+        Piece aux = piece(position);
+
+        if (aux == null) {
             return null;
         }
-        Piece aux = piece(position);
+
         aux.position = null;
         pieces[position.getRow()][position.getColumn()] = null;
         return aux;
