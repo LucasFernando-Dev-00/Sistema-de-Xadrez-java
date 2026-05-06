@@ -47,7 +47,9 @@ public class ChessMatch {
         if (!board.thereIsAPiece(position)) {
             throw new BoardException("There is no piece on source position");
         }
-
+        if (!board.piece(position).isThereAnyPossible()) {
+            throw new BoardException("There is no possible moves for the chosen piece");
+        }
     }
 
     private void placeNewPiece(char column , int row, ChessPiece piece) {
