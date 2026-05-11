@@ -163,7 +163,7 @@ public class ChessMatch {
         if(!testCheck(color)) {
             return false;
         }
-        List<Piece> list = piecesOnTheBoard.stream().filter(x -> ((ChessPiece)x).getColor() == opponent(color)).collect(Collectors.toList());
+        List<Piece> list = piecesOnTheBoard.stream().filter(x -> ((ChessPiece)x).getColor() == color).collect(Collectors.toList());
         for (Piece p : list) {
             boolean[][] mat = p.possibleMoves();
             for(int i = 0; i <board.getRows(); i++) {
@@ -191,7 +191,7 @@ public class ChessMatch {
 
 
     private void initialSetup() {
-        placeNewPiece('h', 7, new Rook(board, Color.BLACK));
+        placeNewPiece('h', 7, new Rook(board, Color.WHITE));
         placeNewPiece('d', 1, new Rook(board, Color.WHITE));
         placeNewPiece('e', 1, new King(board, Color.WHITE));
 
